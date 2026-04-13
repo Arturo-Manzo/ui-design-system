@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "prepare": "npm run build && xcopy /E /I /Y dist\\ui-design-system\\* .",
+    "prepare": "npm run build && xcopy /E /I /Y dist\\ui-design-system\\* . && xcopy /E /I /Y projects\\ui-design-system\\src\\lib\\styles styles",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
