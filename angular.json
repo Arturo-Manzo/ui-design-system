@@ -6,5 +6,31 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+    "ui-design-system": {
+      "projectType": "library",
+      "root": "projects/ui-design-system",
+      "sourceRoot": "projects/ui-design-system/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-design-system/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-design-system/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/ui-design-system/tsconfig.spec.json"
+          }
+        }
+      }
+    }
   }
 }
