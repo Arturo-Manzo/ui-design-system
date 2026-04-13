@@ -221,7 +221,7 @@ table thead th {
   height: 1rem;
 }
 
-.ui-button {
+.ui-btn {
   padding: 0.625rem 1rem;
   font-size: clamp(0.875rem, 1.5vw, 1rem);
   font-weight: 600;
@@ -232,25 +232,71 @@ table thead th {
   line-height: 1.5;
 }
 
-.ui-button--secondary {
+.ui-btn[data-btn-variant="secondary"] {
   color: var(--color-muted);
   background: transparent;
 }
 
-.ui-button--secondary:hover {
+.ui-btn[data-btn-variant="secondary"]:hover {
   background: var(--color-surface-low);
 }
 
-.ui-button--primary {
+.ui-btn[data-btn-variant="primary"] {
   background: var(--color-accent);
   color: white;
 }
 
-.ui-button--primary:hover {
+.ui-btn[data-btn-variant="primary"]:hover {
   background: var(--color-accent-deep);
 }
 
-.ui-button:disabled {
+.ui-btn[data-btn-variant="neutral"] {
+  color: var(--color-muted);
+  background: transparent;
+}
+
+.ui-btn[data-btn-variant="neutral"]:hover {
+  background: var(--color-surface-low);
+}
+
+.ui-btn[data-btn-variant="info"] {
+  background: #0288d1;
+  color: white;
+}
+
+.ui-btn[data-btn-variant="info"]:hover {
+  background: #0277bd;
+}
+
+.ui-btn[data-btn-variant="warning"] {
+  background: var(--ui-warning-text);
+  color: white;
+}
+
+.ui-btn[data-btn-variant="warning"]:hover {
+  background: #b45309;
+}
+
+.ui-btn[data-btn-variant="danger"] {
+  background: var(--ui-critical-text);
+  color: white;
+}
+
+.ui-btn[data-btn-variant="danger"]:hover {
+  background: #c62828;
+}
+
+.ui-btn[data-btn-size="sm"] {
+  padding: 0.5rem 0.75rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+}
+
+.ui-btn[data-btn-size="lg"] {
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+.ui-btn:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
