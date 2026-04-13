@@ -1,14 +1,15 @@
 {
   "name": "ui-design-system",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "prepare": "npm run build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
+  "private": false,
   "packageManager": "npm@11.11.0",
   "dependencies": {
     "@angular/common": "^21.2.0",
