@@ -1,37 +1,25 @@
 {
   "name": "ui-design-system",
-  "version": "1.1.1",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "prepare": "npm run build && xcopy /E /I /Y dist\\ui-design-system\\* . && xcopy /E /I /Y projects\\ui-design-system\\src\\lib\\styles styles",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
-  "private": false,
-  "packageManager": "npm@11.11.0",
-  "exports": {
-    "./styles/ui-design-system.scss": "./styles/ui-design-system.scss"
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/core": "^21.2.0"
   },
   "dependencies": {
-    "@angular/common": "^21.2.0",
-    "@angular/compiler": "^21.2.0",
-    "@angular/core": "^21.2.0",
-    "@angular/forms": "^21.2.0",
-    "@angular/platform-browser": "^21.2.0",
-    "@angular/router": "^21.2.0",
-    "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
-  "devDependencies": {
-    "@angular/build": "^21.2.7",
-    "@angular/cli": "^21.2.7",
-    "@angular/compiler-cli": "^21.2.0",
-    "jsdom": "^28.0.0",
-    "ng-packagr": "^21.2.0",
-    "prettier": "^3.8.1",
-    "typescript": "~5.9.2",
-    "vitest": "^4.0.8"
-  }
+  "sideEffects": false,
+  "module": "fesm2022/ui-design-system.mjs",
+  "typings": "types/ui-design-system.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./types/ui-design-system.d.ts",
+      "default": "./fesm2022/ui-design-system.mjs"
+    },
+    "./styles/ui-design-system.scss": "./styles/ui-design-system.scss"
+  },
+  "type": "module"
 }

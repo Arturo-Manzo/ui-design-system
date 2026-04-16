@@ -6,6 +6,10 @@
     "cssUrl": "inline"
   },
   "assets": [
-    "./styles/*.scss"
+    {
+      "glob": "**/*.scss",
+      "input": "./styles",
+      "output": "./styles"
+    }
   ]
 }

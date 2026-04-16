@@ -1,59 +1,77 @@
-# UiDesignSystem
+# ui-design-system
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+**Librería independiente de Angular para centralizar el sistema de diseño visual estándar (migrado desde DeskIQ) para todas tus aplicaciones Angular.**
 
-## Development server
+---
 
-To start a local development server, run:
+## Características principales
+- Variables y utilidades CSS listas para uso global (modo claro/oscuro)
+- Directiva `ButtonDirective` para uniformidad visual y lógica de botones
+- Servicio `ThemeService` para gestión de tema light/dark/system centralizado
 
+---
+## Instalación
+### 1. Instala la librería en tus aplicaciones (AScheduler, DeskIQ, etc)
 ```bash
-ng serve
+npm install ../ui-design-system/dist/ui-design-system # o instala desde npm si se publica
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
+## Uso de estilos globales
+**Importa el SCSS de la librería en el global styles de tu app:**
 
-## Code scaffolding
+1. Agrega en tu `src/styles.scss` o equivalente:
+   ```scss
+   @import 'ui-design-system/styles/ui-design-system.scss';
+   ```
+2. Asegúrate que el path de Node/NPM esté bien resuelto (o ajusta según configuración `angular.json` si es necesario).
+3. Ahora tendrás todas las variables, utilidades y estilos base UI disponibles en tu aplicación.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+---
+## Uso de la Directiva `ButtonDirective`
+1. Importa la directiva en tu módulo/component standalone:
+```ts
+import { ButtonDirective } from 'ui-design-system';
+```
+2. Úsala en tus plantillas:
+```html
+<button appButton buttonSize="md">Botón Primario</button>
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+## Gestión de temas: `ThemeService`
+Sirve para inicializar y cambiar modo claro/oscuro/system de forma global:
+1. Inyecta e inicializa el servicio (ejemplo en `AppComponent`):
+```ts
+import { ThemeService } from 'ui-design-system';
 
-```bash
-ng generate --help
+constructor(private themeService: ThemeService) {}
+
+ngOnInit() {
+  this.themeService.init();
+}
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
+2. Cambia el modo mediante:
+```ts
+themeService.setMode('dark' | 'light' | 'system');
 ```
+---
+## Build y publicación
+- Para construir la librería:
+  ```bash
+  ng build ui-design-system
+  ```
+- Para publicarla en tu registro privado:
+  ```bash
+  cd dist/ui-design-system && npm publish
+  ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
+## Mejores prácticas
+- Revisa los comentarios en cada archivo fuente para detalles de extensión.
+- Si expandes el sistema, mantén consistencia en nombres y comentado limpio.
+- Versiona la librería y actualízala en todos los proyectos cada vez que evoluciones el sistema de diseño.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+> Para más detalles y ejemplos, revisa los archivos fuente y los comentarios del código. ¡Bienvenido a tu propio sistema de diseño reusable!

@@ -38,6 +38,24 @@
   --sapField_Background: #ffffff;
   --sapField_BorderColor: #E0E0E0;
   --sapField_TextColor: #333333;
+
+  /* Spacing */
+  --ui-spacing-xl: 3rem;
+  --ui-spacing-md: 1rem;
+  --ui-spacing-sm: 0.75rem;
+
+  /* Z-index */
+  --ui-z-base: 0;
+  --ui-z-auth: 10;
+  --ui-z-modal: 100;
+  --ui-z-dropdown: 50;
+
+  /* Letter-spacing */
+  --ui-tracking-tight: 0.35em;
+  --ui-tracking-normal: 0.2em;
+
+  /* Scale */
+  --ui-scale-press: 0.99;
 }
 
 * {
@@ -381,4 +399,34 @@ table thead th {
   padding: 1rem 1.25rem;
   vertical-align: top;
   line-height: 1.5;
+}
+
+/* Auth Layout & Utilities */
+
+.ui-auth-layout {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding: var(--ui-spacing-xl) var(--ui-spacing-md);
+  overflow: hidden;
+  z-index: var(--ui-z-auth);
+}
+
+.ui-auth-layout__background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--color-accent) 14%, transparent) 36%, transparent),
+              radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--color-accent) 10%, transparent) 30%, transparent);
+}
+
+.ui-tracking-tight {
+  letter-spacing: var(--ui-tracking-tight);
+}
+
+.ui-scale-press:active {
+  transform: scale(var(--ui-scale-press));
 }
