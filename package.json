@@ -18,8 +18,7 @@
     ".": {
       "types": "./types/ui-design-system.d.ts",
       "default": "./fesm2022/ui-design-system.mjs"
-    },
-    "./styles/ui-design-system.scss": "./styles/ui-design-system.scss"
+    }
   },
   "type": "module"
 }
