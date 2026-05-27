@@ -11,7 +11,7 @@
 
 ---
 ## Instalación
-### 1. Instala la librería en tus aplicaciones (AScheduler, DeskIQ, etc)
+### 1. Instala la librería en tus aplicaciones (CHRONIQ, DeskIQ, etc)
 ```bash
 npm install ../ui-design-system/dist/ui-design-system # o instala desde npm si se publica
 ```
